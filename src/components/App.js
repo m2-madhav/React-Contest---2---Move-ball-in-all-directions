@@ -12,11 +12,12 @@ const App = () => {
   const start = () => {
     setRenderBall(true);
   };
+
   const reset = () => {
     setRenderBall(false);
     setBallPosition({
       left: "0px",
-      right: "0px"
+      top: "0px"
     });
     setX(0);
     setY(0);
@@ -24,14 +25,14 @@ const App = () => {
   const renderChoice = () => {
     if (renderBall) {
       return <div className="ball" style={ballPosition}></div>;
-    } else {
+    } else
       return (
         <button className="start" onClick={start}>
           Start
         </button>
       );
-    }
   };
+
   const move = (event) => {
     const copyBallPosition = { ...ballPosition };
     if (event.keyCode === 39) {
@@ -48,6 +49,7 @@ const App = () => {
 
   React.useEffect(() => {
     document.addEventListener("keydown", move);
+
     return () => {
       document.removeEventListener("keydown", move);
     };
