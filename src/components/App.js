@@ -35,13 +35,13 @@ const App = () => {
   const move = (event) => {
     const copyBallPosition = { ...ballPosition };
     if (event.keyCode === 39) {
-      copyBallPosition.right = +copyBallPosition.right.slice(0, -2) + 5 + "px";
+      copyBallPosition.left = +copyBallPosition.left.slice(0, -2) + 5 + "px";
     } else if (event.keyCode === 40) {
       copyBallPosition.top = +copyBallPosition.top.slice(0, -2) + 5 + "px";
     } else if (event.keyCode === 38) {
-      copyBallPosition.down = +copyBallPosition.down.slice(0, -2) + 5 + "px";
+      copyBallPosition.top = +copyBallPosition.top.slice(0, -2) - 5 + "px";
     } else if (event.keyCode === 37) {
-      copyBallPosition.left = +copyBallPosition.left.slice(0, -2) + 5 + "px";
+      copyBallPosition.left = +copyBallPosition.left.slice(0, -2) - 5 + "px";
     }
     setBallPosition(copyBallPosition);
   };
